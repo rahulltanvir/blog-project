@@ -5,6 +5,11 @@ include("class/function.php");
 if(isset($_POST['login_btn'])){
     $adminLoginobj->adminLogin($_POST);
 }
+session_start();
+$id = $_SESSION['adminId'];
+    if($id){
+        header("location: dashboard.php");
+    }
 
 ?>
 

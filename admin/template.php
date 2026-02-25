@@ -1,3 +1,13 @@
+<?php
+    include("class/function.php");
+    session_start();
+    $id = $_SESSION['adminId'];
+    if($id==null){
+        header("location: index.php");
+    }
+?>
+
+
 <?php include_once("includes/head.php"); ?>
     <body class="sb-nav-fixed">
         <?php include_once("includes/topnav.php"); ?>

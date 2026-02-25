@@ -29,6 +29,11 @@
 
             if($loginfo){
                 header("location:dashboard.php");
+                $adminData= mysqli_fetch_assoc($loginfo);
+                session_start();
+                $_SESSION['adminId']=$adminData['id'];
+                $_SESSION['adminName']=$adminData['admin_name'];
+
             }
         }
     }
