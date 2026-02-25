@@ -1,0 +1,41 @@
+<?php
+    Class blogproject{
+
+    private $conn;
+
+   public function __construct(){
+        try{
+            $dbHost = 'localhost';
+            $dbUser = 'root'; // ইচ্ছা করে ভুল দিলাম
+            $dbPass = '';
+            $dbName = 'blogproject';
+
+            $this->conn = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
+
+
+        }catch(mysqli_sql_exception $connmsg){
+            die("Connection Failed!! ".$connmsg->getMessage());
+        }
+    }
+
+    public function adminLogin($data){
+        $admin_email=$data['admin_email'];
+        $admin_pass =md5($data['admin_pass']);
+
+        $query ="SELECT * FROM admin_info WHERE admin_email='$admin_email' && admin_pass='$admin_pass' ";
+
+        if(mysqli_query($this->conn, $query)){
+            $loginfo=mysqli_query($this->conn, $query);
+
+            if($loginfo){
+                header("location:dashboard.php");
+            }
+        }
+    }
+
+
+
+
+}
+
+?>
