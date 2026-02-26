@@ -38,6 +38,12 @@
         }
     }
 
+    public function adminlogOut(){
+        unset($_SESSION['adminId']);
+        unset($_SESSION['adminName']);
+        header("location: index.php");
+    }
+
 
 
 

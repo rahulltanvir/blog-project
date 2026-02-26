@@ -6,10 +6,11 @@ if(isset($_POST['login_btn'])){
     $adminLoginobj->adminLogin($_POST);
 }
 session_start();
-$id = $_SESSION['adminId'];
-    if($id){
-        header("location: dashboard.php");
-    }
+if (isset($_SESSION["adminId"])) {
+    $id = $_SESSION["adminId"];
+    header("Location: dashboard.php");
+    exit();
+}
 
 ?>
 

@@ -1,9 +1,15 @@
 <?php
     include("class/function.php");
+    $adminLoginobj= new blogproject();
     session_start();
     $id = $_SESSION['adminId'];
     if($id==null){
-        header("location: index.php");
+        header("location: index.php"); 
+    }
+    if(isset($_GET['adminlogOut'])){
+        if($_GET['adminlogOut']='logout'){
+            $adminLoginobj->adminlogOut();
+        }
     }
 ?>
 
