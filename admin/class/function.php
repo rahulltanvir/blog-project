@@ -44,6 +44,17 @@
         header("location: index.php");
     }
 
+    public function addCategorydata($data){
+        $catName=$data['cat_name'];
+        $catDes =$data['cat_des'];
+
+        $query="INSERT INTO category (cat_name, cat_des) VALUE ('$catName','$catDes') ";
+        if(mysqli_query($this->conn, $query)){
+            return "Category Add Successfully";
+        }
+        
+    }
+
 
 
 

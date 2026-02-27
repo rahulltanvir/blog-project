@@ -41,8 +41,9 @@ if (isset($_SESSION["adminId"])) {
                                                     <label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
                                                 </div>
                                             </div> -->
-                                            <div class="form-group d-flex align-items-center mt-4 mb-0" >  
-                                                <input type="submit" name="login_btn" value="Login" style=" width:20%;" class="btn btn-dark" id="">
+                                            <div class="form-group d-flex align-items-center mt-4 mb-0" > 
+                                                <p id="message"></p> 
+                                                <input type="submit" onclick="login()" name="login_btn" value="Login" style=" width:20%;" class="btn btn-dark" id="">
                                             </div>
                                         </form>
                                     </div>
