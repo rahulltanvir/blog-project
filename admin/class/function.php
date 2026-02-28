@@ -54,6 +54,13 @@
         }
         
     }
+    public function displayCat(){
+        $query="SELECT * FROM category";
+        if(mysqli_query($this->conn, $query)){
+            $catchData=mysqli_query($this->conn, $query);
+            return $catchData;
+        }
+    }
 
 
 

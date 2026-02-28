@@ -1,1 +1,31 @@
+<?php 
+$discat=$adminLoginobj->displayCat();
+
+
+?>
+
+
 <h2>Manage Category Page</h2>
+<div class="container my-4 p-4 shadow">
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Category Name</th>
+                <th>Category Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php while($DiscatFet=mysqli_fetch_assoc($discat)){ ?>
+            <tr>
+                <td><?php echo  $DiscatFet['cat_name']; ?></td>
+                <td><?php echo  $DiscatFet['cat_des']; ?></td>
+                <td>
+                    <a class="btn btn-success" href="">Edit</a>
+                    <a class="btn btn-warning" href="">Delete</a>
+                </td>
+            </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
