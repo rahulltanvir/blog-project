@@ -19,7 +19,7 @@ $discat=$adminLoginobj->displayCat();
             <?php while($DiscatFet=mysqli_fetch_assoc($discat)){ ?>
             <tr>
                 <td><?php echo  $DiscatFet['cat_name']; ?></td>
-                <td><?php echo  $DiscatFet['cat_des']; ?></td>
+                <td style="width:500px"><?php echo  $DiscatFet['cat_des']; ?></td>
                 <td>
                     <a class="btn btn-success" href="">Edit</a>
                     <a class="btn btn-warning" href="">Delete</a>
