@@ -62,6 +62,32 @@
         }
     }
 
+    public function addPost($data){
+        $postTitle=$data['post_title'];
+        $postContent=$data['post_content'];
+        $postCtg=$data['post_ctg'];
+        $postSummary=$data['post_summary'];
+        $postTag=$data['post_tag'];
+        $postImg=$_FILES['post_img']['name'];
+        $imgTemp=$_FILES['post_img']['tmp_name'];
+        $postStatus=$data['post_status'];
+
+        $query="INSERT INTO posts (post_title,post_content,post_img,post_ctg,post_author,post_date,post_comment_count,post_summary,post_tag,post_status) VALUES ('$postTitle','$postContent','$postImg',' $postCtg','admin',now(),5,'$postSummary','$postTag',$postStatus) ";
+
+        if(mysqli_query($this->conn,$query)){
+            move_uploaded_file($imgTemp,"../image/".$postImg);
+            return "Add Post Successfully";
+        }
+        
+    }
+
+    public function displayPost(){
+        $query="SELECT * FROM posts";
+        if(mysqli_query($this->conn, $query)){
+            $catchData=mysqli_query($this->conn, $query);
+            return $catchData;
+        }
+    }
 
 
 
