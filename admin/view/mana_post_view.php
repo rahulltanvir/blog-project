@@ -19,10 +19,16 @@
             <?php while($postData_f=mysqli_fetch_assoc($postData)){ ?>
             <tr>
                 <td><?php echo $postData_f['post_title']; ?></td>
-                <td><?php echo $postData_f['post_ctg']; ?></td>
+                <td><?php echo $postData_f['cat_name']; ?></td>
                 <td><?php echo $postData_f['post_tag']; ?></td>
                 <td><img style="width:50px;" src="../image/<?php echo $postData_f['post_img']; ?>" alt="image"></td>
-                <td><?php echo $postData_f['post_status']; ?></td>
+                <td><?php  if($postData_f['post_status']==1){
+                    echo "Published";
+                }else{
+                    echo "Unpublished";
+                }
+                
+                ?></td>
                 <td>
                     <a href="" class="btn btn-primary">Edit</a>
                     <a href="" class="btn btn-danger">Delete</a>

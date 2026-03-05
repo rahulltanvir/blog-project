@@ -72,7 +72,7 @@
         $imgTemp=$_FILES['post_img']['tmp_name'];
         $postStatus=$data['post_status'];
 
-        $query="INSERT INTO posts (post_title,post_content,post_img,post_ctg,post_author,post_date,post_comment_count,post_summary,post_tag,post_status) VALUES ('$postTitle','$postContent','$postImg',' $postCtg','admin',now(),5,'$postSummary','$postTag',$postStatus) ";
+        $query="INSERT INTO posts (post_title,post_content,post_img,post_ctg,post_author,post_date,post_comment_count,post_summary,post_tag,post_status) VALUES ('$postTitle','$postContent','$postImg',' $postCtg','admin',now(),5,'$postSummary','$postTag',$postStatus)";
 
         if(mysqli_query($this->conn,$query)){
             move_uploaded_file($imgTemp,"../image/".$postImg);
@@ -82,7 +82,14 @@
     }
 
     public function displayPost(){
-        $query="SELECT * FROM posts";
+        $query="SELECT * FROM post_with_ctg";
+        if(mysqli_query($this->conn, $query)){
+            $catchData=mysqli_query($this->conn, $query);
+            return $catchData;
+        }
+    }
+     public function displayPost_publish(){
+        $query="SELECT * FROM post_with_ctg WHERE post_status=1";
         if(mysqli_query($this->conn, $query)){
             $catchData=mysqli_query($this->conn, $query);
             return $catchData;
