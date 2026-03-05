@@ -20,7 +20,7 @@ $displaywebPage = $webObj->displayPost_publish();
               <ul class="post-info">
                 <li><a href="#"><?php echo $displaywebPage_f_data['post_author']; ?></a></li>
                 <li><a href="#"><?php echo $displaywebPage_f_data['post_date']; ?></a></li>
-                <li><a href="#"><?php echo $displaywebPage_f_data['post_comment_count']; ?></a></li>
+                <li><a href="#"><i class="fa fa-tags"></i><?php echo $displaywebPage_f_data['post_comment_count']; ?></a></li>
               </ul>
               <p><?php echo $displaywebPage_f_data['post_summary']; ?></p>
               <div class="post-options">
