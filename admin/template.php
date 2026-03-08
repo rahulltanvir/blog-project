@@ -34,6 +34,10 @@
                                 include("view/addpost_view.php");
                             }elseif($view=="manage_post"){
                                 include("view/mana_post_view.php");
+                            }elseif($view=="edit_cat"){
+                                include("view/edit_catview.php");
+                            }elseif($view=="edit_post"){
+                                include("view/edit_postview.php");
                             }
                         }           
                        ?>

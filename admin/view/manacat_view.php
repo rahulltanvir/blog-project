@@ -21,7 +21,7 @@ $discat=$adminLoginobj->displayCat();
                 <td><?php echo  $DiscatFet['cat_name']; ?></td>
                 <td style="width:500px"><?php echo  $DiscatFet['cat_des']; ?></td>
                 <td>
-                    <a class="btn btn-success" href="">Edit</a>
+                    <a class="btn btn-success" href="edit_cat.php?status=edit&&id=<?php echo  $DiscatFet['cat_id']; ?>">Edit</a>
                     <a class="btn btn-warning" href="">Delete</a>
                 </td>
             </tr>

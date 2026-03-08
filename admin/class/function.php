@@ -95,6 +95,14 @@
             return $catchData;
         }
     }
+    public function editCat($id){
+        $query="SELECT * FROM category WHERE id=$id";
+        if(mysqli_query($this->conn,$query)){
+            $catch_catData=mysqli_query($this->conn,$query);
+            $catch_data_f=mysqli_fetch_assoc($catch_catData);
+            return $catch_data_f;
+        }
+    }
 
 
 
