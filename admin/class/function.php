@@ -95,12 +95,17 @@
             return $catchData;
         }
     }
-    public function editCat($id){
-        $query="SELECT * FROM category WHERE id=$id";
+    public function editCat_byid($id){
+        // $query="SELECT * FROM `category` WHERE id=$id";
+        // if(mysqli_query($this->conn,$query)){
+        //     $catch_catData=mysqli_query($this->conn,$query);
+        //     $catch_data_f=mysqli_fetch_assoc($catch_catData);
+        //     return $catch_data_f;
+        $query="SELECT * FROM category WHERE cat_id=$id";
         if(mysqli_query($this->conn,$query)){
-            $catch_catData=mysqli_query($this->conn,$query);
-            $catch_data_f=mysqli_fetch_assoc($catch_catData);
-            return $catch_data_f;
+            $all_id_data=mysqli_query($this->conn,$query);
+            $id_data_fecth=mysqli_fetch_assoc( $all_id_data);
+            return $id_data_fecth;
         }
     }
 
